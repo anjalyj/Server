@@ -34,13 +34,13 @@ var printHeading = function(){
 	printHorizontalLine(2);
 
 	readline.cursorTo(process.stdout,30,1);
-	process.stdin.write('FileName'.cyan);
+	process.stdin.write('User_Address'.cyan);
 
 	readline.cursorTo(process.stdout,95,1);
-	process.stdin.write('FilePath'.cyan);
+	process.stdin.write('Date_and_Time'.cyan);
 
 	readline.cursorTo(process.stdout,137,1);
-	process.stdin.write('No Of Lines'.cyan);
+	process.stdin.write('Request'.cyan);
 };
 
 var printVerticalLine = function(from, upto, where){
@@ -94,9 +94,9 @@ var printEachInfo = function(allInformation, yAxis){
 	var currentInfo = allInformation.shift();
 
 	var allInfo = [];
-	allInfo.push(currentInfo['FileName']);
-	allInfo.push(currentInfo['FilePath']);
-	allInfo.push(currentInfo['No_Of_Lines']);
+	allInfo.push(currentInfo['User_Address'].toString());
+	allInfo.push(currentInfo['Request'].toString());
+	allInfo.push(currentInfo['Date_and_Time'].substr(4,12).toString());
 
 	var allXAxis = [1, 67, 132];
 	var colors = [ 'yellow', 'cyan', 'white' ];
